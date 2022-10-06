@@ -1,0 +1,28 @@
+body {
+    background-color:bisque;
+    color:black;
+}
+
+/* .main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+} */
+
+.main-container {
+    display: grid;
+    grid-template-rows: 200px 250px;
+}
+
+.combotype {
+    max-width: 100px;
+    height:auto;
+}
+
+ul {
+    display: grid;
+    grid-template-columns: repeat(20, 1fr);
+    list-style: none;
+}

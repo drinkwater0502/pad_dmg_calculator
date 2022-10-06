@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <title>Calculator</title>
+</head>
+<body>
+    <!-- <form> -->
+        <div class="main-container"">
+            <div class="grid-item grid-item-1">
+                <label for="ATK">Enter ATK: </label>
+                <input type="text" id="ATK" name="ATK">
+                <br>
+                <a>Awakenings: </a>
+                <ul id="awakenings-list"></ul>
+            </div>
+            <div class="grid-item grid-item-2">
+                <h1>Add Awakenings</h1>
+                <input type="image" src="./images/10c.png" onclick="addAwakening('./images/10c.png')"/>
+                <input type="image" src="./images/7c.png" onclick="addAwakening('./images/7c.png')"/>
+                <input type="image" src="./images/blob.png"/>
+                <input type="image" src="./images/piercevoid.png"/>
+                <input type="image" src="./images/blind.png"/>
+                <input type="image" src="./images/tpaplus.png"/>
+                <input type="image" src="./images/tpa.png"/>
+                <input type="image" src="./images/unlock.png"/>
+                <input type="image" src="./images/3col.png"/>
+                <input type="image" src="./images/4col.png"/>
+                <input type="image" src="./images/5col.png"/>
+                <input type="image" src="./images/50.png"/>
+                <input type="image" src="./images/80.png"/>
+                <input type="image" src="./images/firerow.png"/>
+                <input type="image" src="./images/waterrow.png"/>
+                <input type="image" src="./images/greenrow.png"/>
+                <input type="image" src="./images/lightrow.png"/>
+                <input type="image" src="./images/darkrow.png"/>
+                <input type="image" src="./images/firecombo.png"/>
+                <input type="image" src="./images/watercombo.png"/>
+                <input type="image" src="./images/greencombo.png"/>
+                <input type="image" src="./images/lightcombo.png"/>
+                <input type="image" src="./images/darkcombo.png"/>
+            </div>
+            <div class="grid-item grid-item-3">
+            <h1>Add combos</h1>
+            <h2>Main Attribute</h2>
+                <input class="combotype" type="image" src="./images/3.png"/>
+                <input class="combotype" type="image" src="./images/4.png"/>
+                <input class="combotype" type="image" src="./images/5.png"/>
+                <input class="combotype" type="image" src="./images/6.png"/>
+                <input class="combotype" type="image" src="./images/l.png"/>
+                <input class="combotype" type="image" src="./images/cross.png"/>
+                <input class="combotype" type="image" src="./images/vdp.png"/>
+            </div>
+            <div class="grid-item grid-item-3">
+                <h2>Sub attribute</h2>
+                <input class="combotype" type="image" src="./images/3.png"/>
+                <input class="combotype" type="image" src="./images/4.png"/>
+                <input class="combotype" type="image" src="./images/5.png"/>
+                <input class="combotype" type="image" src="./images/6.png"/>
+                <input class="combotype" type="image" src="./images/l.png"/>
+                <input class="combotype" type="image" src="./images/cross.png"/>
+                <input class="combotype" type="image" src="./images/vdp.png"/>
+            </div>
+            <div class="grid-item grid-item-4">
+                <label for="numcombostotal">Total number of combos: </label>
+                <input type="number" id="numcombostotal" name="numcombostotal" step="1" value="0">
+            </div>
+            <div class="grid-item grid-item-5">
+            <input type="submit" name="submit" id="submit">
+            </div>
+        </div>
+    <!-- </form>  -->
+</body>
+</html>
