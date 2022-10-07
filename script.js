@@ -139,11 +139,17 @@ function getOccurrence(array, value) {
 }
 
 function chooseID(filename) {
-    if (filename == './images/orbs/3.PNG' || filename == './images/orbs/ltrans.png' || filename == './images/orbs/crosstrans.png' || filename == './images/orbs/vdp.PNG') {
+    if (filename == './images/orbs/3.PNG' || filename == './images/orbs/ltrans.png' || filename == './images/orbs/crosstrans.png' || filename == './images/orbs/vdp.PNG' || filename == './images/orbs/heartltrans.png' || filename == './images/orbs/heartvdp.png') {
         return 'combo3'
     } else if (filename == './images/orbs/4.PNG' || filename == './images/orbs/nonrowtrans.png') {
         return 'combo4'
     } else {
         return 'combo5'
     }
+}
+
+function calculateDMG () {
+    let userATK = Number(document.getElementById('ATK').value)
+    let newe = userATK + 500
+    console.log(newe)
 }

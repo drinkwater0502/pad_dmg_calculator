@@ -29,13 +29,14 @@
                 <br>
                 <a>Awakenings: </a>
                 <ul id="awakenings-list"></ul>
-                <a>Combos: </a>
+                <a>Main Attribute Combos: </a>
                 <ul id="combos-list-main"></ul>
+                <a>Sub Attribute Combos: </a>
                 <ul id="combos-list-sub"></ul>
-                <button class="dmgcalcbtn">Calculate Damage</button>
+                <button class="dmgcalcbtn" onclick="calculateDMG()">Calculate Damage</button>
             </div>
             <div class="grid-item grid-item-2">
-                <h1>Add Awakenings</h1>
+                <h2>Add Awakenings</h2>
                 <input type="image" src="./images/10c.png" onclick="addAwakening('./images/10c.png')"/>
                 <input type="image" src="./images/7c.png" onclick="addAwakening('./images/7c.png')"/>
                 <input type="image" src="./images/blob.png" onclick="addAwakening('./images/blob.png')"/>
@@ -61,7 +62,7 @@
                 <input type="image" src="./images/darkcombo.png" onclick="addAwakening('./images/darkcombo.png')"/>
             </div>
             <div class="grid-item grid-item-3">
-            <h1>Add combos</h1>
+            <h2>Add combos</h2>
             <input type="radio" id="main-radio" checked="checked" name="radioname">
             <label for="main-radio">Main Attribute</label>
             <input type="radio" id="sub-radio" name="radioname">
@@ -72,24 +73,30 @@
                     <th>4</th>
                     <th>5</th>
                     <th>6 (row)</th>
+                    <th>6 (not row)</th>
+                    <th>L</th>
                 </tr>
                 <tr>
                     <td><input class="combotype" id="combo3" type="image" src="./images/orbs/3.PNG" onclick="addCombo('./images/orbs/3.PNG')"/></td>
                     <td><input class="combotype" id="combo4" type="image" src="./images/orbs/4.PNG" onclick="addCombo('./images/orbs/4.PNG')"/></td>
                     <td><input class="combotype" id="combo5" type="image" src="./images/orbs/5.PNG" onclick="addCombo('./images/orbs/5.PNG')"/></td>
                     <td><input class="combotype" id="comborow" type="image" src="./images/orbs/row.PNG" onclick="addCombo('./images/orbs/row.PNG')"/></td>
-                </tr>
-                <tr>
-                    <th>6 (not row)</th>
-                    <th>L</th>
-                    <th>Cross</th>
-                    <th>VDP</th>
-                </tr>
-                <tr>
                     <td><input class="combotype" id="combononrow" type="image" src="./images/orbs/nonrowtrans.png" onclick="addCombo('./images/orbs/nonrowtrans.png')"/></td>
                     <td><input class="combotype" id="combol" type="image" src="./images/orbs/ltrans.png" onclick="addCombo('./images/orbs/ltrans.png')"/></td>
+                </tr>
+                <tr>
+                    <th>Cross</th>
+                    <th>VDP</th>
+                    <th>Heart L</th>
+                    <th>Heart 3x3</th>
+                    <th colspan="2">Blob</th>
+                </tr>
+                <tr>
                     <td><input class="combotype" id="combocross" type="image" src="./images/orbs/crosstrans.png" onclick="addCombo('./images/orbs/crosstrans.png')"/></td>
                     <td><input class="combotype" id="combovdp" type="image" src="./images/orbs/vdp.PNG" onclick="addCombo('./images/orbs/vdp.PNG')"/></td>
+                    <td><input class="combotype" id="comboheartl" type="image" src="./images/orbs/heartltrans.png" onclick="addCombo('./images/orbs/heartltrans.png')"/></td>
+                    <td><input class="combotype" id="comboheartvdp" type="image" src="./images/orbs/heartvdp.PNG" onclick="addCombo('./images/orbs/heartvdp.png')"/></td>
+                    <td colspan="2" id="tdblob"><input class="combotype" id="comboblob" type="image" src="./images/orbs/blob.PNG" onclick="addCombo('./images/orbs/blob.png')"/><a>hi</a><br><a>hello</a></td>
                 </tr>
             </table>
             </div>

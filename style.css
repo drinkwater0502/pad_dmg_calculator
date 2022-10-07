@@ -22,8 +22,8 @@ https://www.schemecolor.com/deep-pond.php */
     "gi2 gi4"
     "gi3 gi4";
     gap: 5px;
-    grid-template-columns: 1100px 1fr;
-    grid-template-rows: 500px 100px 400px 1fr;
+    grid-template-columns: 1150px 1fr;
+    grid-template-rows: 550px 100px 400px auto;
      
 }
 
@@ -84,6 +84,16 @@ https://www.schemecolor.com/deep-pond.php */
     max-width: 90px;
 }
 
+#comboheartl {
+    max-width: 90px;
+}
+
+#comboheartvdp {
+    max-width: 90px;
+}
+
+
+
 ul {
     display: grid;
     grid-template-columns: repeat(20, 1fr);
@@ -123,15 +133,23 @@ h1, h2 {
 }
 
 #combos-list-main {
-    min-height: 120px;
+    min-height: 130px;
 }
 
 #combos-list-sub {
-    min-height: 120px;
+    min-height: 130px;
 }
 
 .dmgcalcbtn {
     display: block;
     margin-left: auto;
     margin-right: 0;
+}
+
+#comboblob {
+    max-width:180px;
+}
+
+#tdblob {
+    text-align: left;
 }
