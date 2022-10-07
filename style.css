@@ -14,12 +14,13 @@ body {
 .main-container {
     display: grid;
     grid-template-areas:
-    "gi1 gi6"
-    "gi2 gi6"
-    "gi3 gi6"
-    "gi4 gi6"
-    "gi5 gi6";
-    gap: 50px;
+    "gi1 gi5"
+    "gi2 gi5"
+    "gi3 gi5"
+    "gi4 gi5";
+    gap: 5px;
+    grid-template-columns: 500px 1fr;
+    grid-template-rows: 1fr 150px 175px 1fr 1fr;
      
 }
 
@@ -43,9 +44,6 @@ body {
     grid-area: gi5;
 }
 
-.grid-item-6 {
-    grid-area: gi6;
-}
 
 .combotype {
     max-width: 50px;
@@ -56,4 +54,10 @@ ul {
     display: grid;
     grid-template-columns: repeat(20, 1fr);
     list-style: none;
+    max-width: 500px;
+    min-height: 90px;
+}
+
+li {
+    padding:5px;
 }
