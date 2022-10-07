@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Inter:wght@300&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
     <title>Calculator</title>
@@ -27,8 +30,9 @@
                 <a>Awakenings: </a>
                 <ul id="awakenings-list"></ul>
                 <a>Combos: </a>
-                <ul id="combos-list"></ul>
-                <button>Calculate Damage</button>
+                <ul id="combos-list-main"></ul>
+                <ul id="combos-list-sub"></ul>
+                <button class="dmgcalcbtn">Calculate Damage</button>
             </div>
             <div class="grid-item grid-item-2">
                 <h1>Add Awakenings</h1>
@@ -58,27 +62,40 @@
             </div>
             <div class="grid-item grid-item-3">
             <h1>Add combos</h1>
-            <h2>Main Attribute</h2>
-                <input class="combotype" type="image" src="./images/3.png" onclick="addCombo('./images/3.png')"/>
-                <input class="combotype" type="image" src="./images/4.png" onclick="addCombo('./images/4.png')"/>
-                <input class="combotype" type="image" src="./images/5.png" onclick="addCombo('./images/5.png')"/>
-                <input class="combotype" type="image" src="./images/6.png" onclick="addCombo('./images/6.png')"/>
-                <input class="combotype" type="image" src="./images/l.png" onclick="addCombo('./images/l.png')"/>
-                <input class="combotype" type="image" src="./images/cross.png" onclick="addCombo('./images/cross.png')"/>
-                <input class="combotype" type="image" src="./images/vdp.png" onclick="addCombo('./images/vdp.png')"/>
+            <input type="radio" id="main-radio" checked="checked" name="radioname">
+            <label for="main-radio">Main Attribute</label>
+            <input type="radio" id="sub-radio" name="radioname">
+            <label for="main-radio">Sub Attribute</label>
+            <table>
+                <tr>
+                    <th>3</th>
+                    <th>4</th>
+                    <th>5</th>
+                    <th>6 (row)</th>
+                </tr>
+                <tr>
+                    <td><input class="combotype" id="combo3" type="image" src="./images/orbs/3.PNG" onclick="addCombo('./images/orbs/3.PNG')"/></td>
+                    <td><input class="combotype" id="combo4" type="image" src="./images/orbs/4.PNG" onclick="addCombo('./images/orbs/4.PNG')"/></td>
+                    <td><input class="combotype" id="combo5" type="image" src="./images/orbs/5.PNG" onclick="addCombo('./images/orbs/5.PNG')"/></td>
+                    <td><input class="combotype" id="comborow" type="image" src="./images/orbs/row.PNG" onclick="addCombo('./images/orbs/row.PNG')"/></td>
+                </tr>
+                <tr>
+                    <th>6 (not row)</th>
+                    <th>L</th>
+                    <th>Cross</th>
+                    <th>VDP</th>
+                </tr>
+                <tr>
+                    <td><input class="combotype" id="combononrow" type="image" src="./images/orbs/nonrowtrans.png" onclick="addCombo('./images/orbs/nonrowtrans.png')"/></td>
+                    <td><input class="combotype" id="combol" type="image" src="./images/orbs/ltrans.png" onclick="addCombo('./images/orbs/ltrans.png')"/></td>
+                    <td><input class="combotype" id="combocross" type="image" src="./images/orbs/crosstrans.png" onclick="addCombo('./images/orbs/crosstrans.png')"/></td>
+                    <td><input class="combotype" id="combovdp" type="image" src="./images/orbs/vdp.PNG" onclick="addCombo('./images/orbs/vdp.PNG')"/></td>
+                </tr>
+            </table>
             </div>
             <div class="grid-item grid-item-4">
-                <h2>Sub attribute</h2>
-                <input class="combotype" type="image" src="./images/3.png"/>
-                <input class="combotype" type="image" src="./images/4.png"/>
-                <input class="combotype" type="image" src="./images/5.png"/>
-                <input class="combotype" type="image" src="./images/6.png"/>
-                <input class="combotype" type="image" src="./images/l.png"/>
-                <input class="combotype" type="image" src="./images/cross.png"/>
-                <input class="combotype" type="image" src="./images/vdp.png"/>
-            </div>
-            <div class="grid-item grid-item-5">
                 <a>Calculation</a>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
             </div>
         </div>
     <!-- </form>  -->
