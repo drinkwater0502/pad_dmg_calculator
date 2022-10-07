@@ -1,4 +1,5 @@
 let awakeningsArray = []
+let combosArray = []
 
 function addAwakening (myAwakening) {
     if (awakeningsArray.includes(myAwakening)) {
@@ -40,6 +41,49 @@ function removeAwakening (myAwakening) {
         findMyLi.remove()
     }
     findMyA.innerHTML = `x${numOfAwakening}`
+}
+
+function addCombo (myCombo) {
+    if (combosArray.includes(myCombo)) {
+        combosArray.push(myCombo)
+        let numOfCombos = getOccurrence(combosArray, myCombo)
+        let findMyLi = document.getElementById(myCombo)
+        let findMyA = findMyLi.lastChild
+        findMyA.innerHTML = `x${numOfCombos}`
+    } else {
+    let numOfCombos = 1
+    combosArray.push(myCombo)
+    let newLi = document.createElement("li")
+    let newInput = document.createElement("input")
+    let newA = document.createElement("a")
+    
+    document.getElementById("combos-list").appendChild(newLi)
+    
+    newLi.appendChild(newInput)
+    newLi.setAttribute("id", myCombo)
+    
+    newInput.setAttribute("type", "image")
+    newInput.setAttribute("src", myCombo)
+    newInput.setAttribute("class", "combotype")
+    newInput.setAttribute("onclick", `removeCombo("${myCombo}")`)
+
+    newLi.appendChild(newA)
+    newA.innerHTML = `x${numOfCombos}`
+    }
+}
+
+function removeCombo (myCombo) {
+    let comboIndex = combosArray.indexOf(myCombo)
+    if (comboIndex !== -1) {
+        combosArray.splice(comboIndex, 1)
+    }
+    numOfCombos = getOccurrence(combosArray, myCombo)
+    let findMyLi = document.getElementById(myCombo)
+    let findMyA = findMyLi.lastChild
+    if (numOfCombos == 0) {
+        findMyLi.remove()
+    }
+    findMyA.innerHTML = `x${numOfCombos}`
 }
 
 function getOccurrence(array, value) {

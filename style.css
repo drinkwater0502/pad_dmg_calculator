@@ -13,11 +13,42 @@ body {
 
 .main-container {
     display: grid;
-    grid-template-rows: 200px 250px;
+    grid-template-areas:
+    "gi1 gi6"
+    "gi2 gi6"
+    "gi3 gi6"
+    "gi4 gi6"
+    "gi5 gi6";
+    gap: 50px;
+     
+}
+
+.grid-item-1 {
+    grid-area: gi1;
+}
+
+.grid-item-2 {
+    grid-area: gi2;
+}
+
+.grid-item-3 {
+    grid-area: gi3;
+}
+
+.grid-item-4 {
+    grid-area: gi4;
+}
+
+.grid-item-5 {
+    grid-area: gi5;
+}
+
+.grid-item-6 {
+    grid-area: gi6;
 }
 
 .combotype {
-    max-width: 100px;
+    max-width: 50px;
     height:auto;
 }
 
