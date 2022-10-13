@@ -45,85 +45,139 @@ function removeAwakening (myAwakening) {
 }
 
 function addCombo (myCombo) {
-    let comboID = ''
+    if (myCombo == 'blob') {
+        orbsValue = document.getElementById("bloborbnumber").value
+        rowsValue = document.getElementById("blobrownumber").value
+        orbsValueString = orbsValue.toString();
+        rowsValueString = rowsValue.toString();
+    }
+
     if (document.getElementById('main-radio').checked) {
-        comboID = myCombo + 'main'
-        if (combosArrayMain.includes(myCombo)) {
-            combosArrayMain.push(myCombo)
-            let numOfCombos = getOccurrence(combosArrayMain, myCombo)
-            let findMyLi = document.getElementById(`${myCombo}main`)
-            let findMyA = findMyLi.lastChild
-            findMyA.innerHTML = `x${numOfCombos}`
-        } else {
-        let numOfCombos = 1
-        combosArrayMain.push(myCombo) // IF MAIN CHECKED: push ./image/x.pngmain to combosArrayMain
-        let newLi = document.createElement("li")
-        let newInput = document.createElement("input")
-        let newA = document.createElement("a")                  // <li><input id="./image/x.pngmain">
-        document.getElementById("combos-list-main").appendChild(newLi)
-        newLi.appendChild(newInput)
-        newLi.setAttribute("id", comboID)
-        newInput.setAttribute("type", "image")
-        newInput.setAttribute("src", myCombo)
-        newInput.setAttribute("class", "combotype")
-        newInput.setAttribute("id", chooseID(myCombo)) // for the size
-        newInput.setAttribute("onclick", `removeCombo("${myCombo}", "main")`)
-    
-        newLi.appendChild(newA)
-        newA.innerHTML = `x${numOfCombos}`
+        attrType = 'main'
+        comboName = myCombo + attrType
+        if (myCombo == 'blob') {
+            comboName += '-' + orbsValueString + '-' + rowsValueString
         }
+        combosArrayMain.push(comboName)
+        numOfCombos = getOccurrence(combosArrayMain, comboName)
     } else {
-        comboID = myCombo + 'sub'
-        if (combosArraySub.includes(myCombo)) {
-            combosArraySub.push(myCombo)
-            let numOfCombos = getOccurrence(combosArraySub, myCombo)
-            let findMyLi = document.getElementById(`${myCombo}sub`)
-            let findMyA = findMyLi.lastChild
-            findMyA.innerHTML = `x${numOfCombos}`
-        } else {
-        let numOfCombos = 1
-        combosArraySub.push(myCombo) // IF MAIN CHECKED: push ./image/x.pngmain to combosArrayMain
-        let newLi = document.createElement("li")
-        let newInput = document.createElement("input")
-        let newA = document.createElement("a")                  // <li><input id="./image/x.pngmain">
-        document.getElementById("combos-list-sub").appendChild(newLi)
+        attrType = 'sub'
+        comboName = myCombo + attrType
+        if (myCombo == 'blob') {
+            comboName += '-' + orbsValueString + '-' + rowsValueString
+        }
+        combosArraySub.push(comboName)
+        numOfCombos = getOccurrence(combosArraySub, comboName)
+    }
+    
+    if (numOfCombos == 1) {
+        newLi = document.createElement("li")
+        newInput = document.createElement("input")
+        newA = document.createElement("a")
+        if (attrType == 'main') {
+            comboList = document.getElementById("combos-list-main")
+        } else if (attrType = 'sub') {
+            comboList = document.getElementById("combos-list-sub")
+        }
+        comboList.appendChild(newLi)
         newLi.appendChild(newInput)
-        newLi.setAttribute("id", comboID)
+        newLi.setAttribute("id", comboName)
         newInput.setAttribute("type", "image")
-        newInput.setAttribute("src", myCombo)
+        newInput.setAttribute("src", comboToFile(myCombo))
         newInput.setAttribute("class", "combotype")
         newInput.setAttribute("id", chooseID(myCombo)) // for the size
-        newInput.setAttribute("onclick", `removeCombo("${myCombo}", "sub")`)
-    
+        if (attrType == 'main') {
+            newInput.setAttribute("onclick", `removeCombo('${comboName}', "main")`)
+        } else if (attrType == 'sub') {
+            newInput.setAttribute("onclick", `removeCombo('${comboName}', "sub")`)
+        }
+        
         newLi.appendChild(newA)
         newA.innerHTML = `x${numOfCombos}`
-        }
+    } else {
+        findMyLi = document.getElementById(comboName)
+        findMyA = findMyLi.lastChild
+        findMyA.innerHTML = `x${numOfCombos}`
     }
 }
 
-function removeCombo (myCombo, mainorsub) {
+//     let comboID = ''
+//     if (document.getElementById('main-radio').checked) {
+//         comboID = myCombo + 'main'
+//         if (combosArrayMain.includes(myCombo)) {
+//             combosArrayMain.push(myCombo)
+//             let numOfCombos = getOccurrence(combosArrayMain, myCombo)
+//             let findMyLi = document.getElementById(`${myCombo}main`)
+//             let findMyA = findMyLi.lastChild
+//             findMyA.innerHTML = `x${numOfCombos}`
+//         } else {
+//         let numOfCombos = 1
+//         combosArrayMain.push(myCombo) // IF MAIN CHECKED: push ./image/x.pngmain to combosArrayMain
+//         let newLi = document.createElement("li")
+//         let newInput = document.createElement("input")
+//         let newA = document.createElement("a")                  // <li><input id="./image/x.pngmain">
+//         document.getElementById("combos-list-main").appendChild(newLi)
+//         newLi.appendChild(newInput)
+//         newLi.setAttribute("id", comboID)
+//         newInput.setAttribute("type", "image")
+//         newInput.setAttribute("src", myCombo)
+//         newInput.setAttribute("class", "combotype")
+//         newInput.setAttribute("id", chooseID(myCombo)) // for the size
+//         newInput.setAttribute("onclick", `removeCombo("${myCombo}", "main")`)
+    
+//         newLi.appendChild(newA)
+//         newA.innerHTML = `x${numOfCombos}`
+//         }
+//     } else {
+//         comboID = myCombo + 'sub'
+//         if (combosArraySub.includes(myCombo)) {
+//             combosArraySub.push(myCombo)
+//             let numOfCombos = getOccurrence(combosArraySub, myCombo)
+//             let findMyLi = document.getElementById(`${myCombo}sub`)
+//             let findMyA = findMyLi.lastChild
+//             findMyA.innerHTML = `x${numOfCombos}`
+//         } else {
+//         let numOfCombos = 1
+//         combosArraySub.push(myCombo) // IF MAIN CHECKED: push ./image/x.pngmain to combosArrayMain
+//         let newLi = document.createElement("li")
+//         let newInput = document.createElement("input")
+//         let newA = document.createElement("a")                  // <li><input id="./image/x.pngmain">
+//         document.getElementById("combos-list-sub").appendChild(newLi)
+//         newLi.appendChild(newInput)
+//         newLi.setAttribute("id", comboID)
+//         newInput.setAttribute("type", "image")
+//         newInput.setAttribute("src", myCombo)
+//         newInput.setAttribute("class", "combotype")
+//         newInput.setAttribute("id", chooseID(myCombo)) // for the size
+//         newInput.setAttribute("onclick", `removeCombo("${myCombo}", "sub")`)
+    
+//         newLi.appendChild(newA)
+//         newA.innerHTML = `x${numOfCombos}`
+//         }
+//     }
+// }
+
+function removeCombo (combo, mainorsub) {
     if (mainorsub == "main") {
-        let comboID = myCombo + 'main'
-        let comboIndex = combosArrayMain.indexOf(myCombo)
+        comboIndex = combosArrayMain.indexOf(combo)
         if (comboIndex !== -1) {
             combosArrayMain.splice(comboIndex, 1)
         }
-        numOfCombos = getOccurrence(combosArrayMain, myCombo)
-        let findMyLi = document.getElementById(comboID)
-        let findMyA = findMyLi.lastChild
+        numOfCombos = getOccurrence(combosArrayMain, combo)
+        findMyLi = document.getElementById(combo)
+        findMyA = findMyLi.lastChild
         if (numOfCombos == 0) {
             findMyLi.remove()
         }
         findMyA.innerHTML = `x${numOfCombos}`
     } else {
-        let comboID = myCombo + 'sub'
-        let comboIndex = combosArraySub.indexOf(myCombo)
+        comboIndex = combosArraySub.indexOf(combo)
         if (comboIndex !== -1) {
             combosArraySub.splice(comboIndex, 1)
         }
-        numOfCombos = getOccurrence(combosArraySub, myCombo)
-        let findMyLi = document.getElementById(comboID)
-        let findMyA = findMyLi.lastChild
+        numOfCombos = getOccurrence(combosArraySub, combo)
+        findMyLi = document.getElementById(combo)
+        findMyA = findMyLi.lastChild
         if (numOfCombos == 0) {
             findMyLi.remove()
         }
@@ -139,12 +193,14 @@ function getOccurrence(array, value) {
 }
 
 function chooseID(filename) {
-    if (filename == './images/orbs/3.PNG' || filename == './images/orbs/ltrans.png' || filename == './images/orbs/crosstrans.png' || filename == './images/orbs/vdp.PNG' || filename == './images/orbs/heartltrans.png' || filename == './images/orbs/heartvdp.png') {
+    if (filename == 'threec' || filename == 'l' || filename == 'cross' || filename == 'vdp' || filename == 'heartl' || filename == 'heartvdp') {
         return 'combo3'
-    } else if (filename == './images/orbs/4.PNG' || filename == './images/orbs/nonrowtrans.png') {
+    } else if (filename == 'fourc' || filename == 'nonrow') {
         return 'combo4'
-    } else {
+    } else if (filename == 'fivec') {
         return 'combo5'
+    } else {
+        return 'comborow'
     }
 }
 
@@ -152,4 +208,30 @@ function calculateDMG () {
     let userATK = Number(document.getElementById('ATK').value)
     let newe = userATK + 500
     console.log(newe)
+}
+
+function comboToFile(combo) {
+    if (combo == 'threec') {
+        return "./images/orbs/3.PNG"
+    } else if (combo == 'fourc') {
+        return "./images/orbs/4.PNG"
+    } else if (combo == 'fivec') {
+        return "./images/orbs/5.PNG"
+    } else if (combo == 'row') {
+        return "./images/orbs/row.PNG"
+    } else if (combo == 'nonrow') {
+        return "./images/orbs/nonrowtrans.png"
+    } else if (combo == 'l') {
+        return "./images/orbs/ltrans.png"
+    } else if (combo == 'cross') {
+        return "./images/orbs/crosstrans.png"
+    } else if (combo == 'vdp') {
+        return "./images/orbs/vdp.PNG"
+    } else if (combo == 'heartl') {
+        return "./images/orbs/heartltrans.png"
+    } else if (combo == 'heartvdp') {
+        return "./images/orbs/heartvdp.PNG"
+    } else if (combo == 'blob') {
+        return "./images/orbs/blob.PNG"
+    }
 }

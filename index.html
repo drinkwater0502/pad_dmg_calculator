@@ -50,6 +50,8 @@
                 <input type="image" src="./images/5col.png" onclick="addAwakening('./images/5col.png')"/>
                 <input type="image" src="./images/50.png" onclick="addAwakening('./images/50.png')"/>
                 <input type="image" src="./images/80.png" onclick="addAwakening('./images/80.png')"/>
+                <input type="image" src="./images/heartl.png" onclick="addAwakening('./images/heartl.png')"/>
+                <input type="image" src="./images/heartvdp.png" onclick="addAwakening('./images/heartvdp.png')"/>
                 <input type="image" src="./images/firerow.png" onclick="addAwakening('./images/firerow.png')"/>
                 <input type="image" src="./images/waterrow.png" onclick="addAwakening('./images/waterrow.png')"/>
                 <input type="image" src="./images/greenrow.png" onclick="addAwakening('./images/greenrow.png')"/>
@@ -77,26 +79,28 @@
                     <th>L</th>
                 </tr>
                 <tr>
-                    <td><input class="combotype" id="combo3" type="image" src="./images/orbs/3.PNG" onclick="addCombo('./images/orbs/3.PNG')"/></td>
-                    <td><input class="combotype" id="combo4" type="image" src="./images/orbs/4.PNG" onclick="addCombo('./images/orbs/4.PNG')"/></td>
-                    <td><input class="combotype" id="combo5" type="image" src="./images/orbs/5.PNG" onclick="addCombo('./images/orbs/5.PNG')"/></td>
-                    <td><input class="combotype" id="comborow" type="image" src="./images/orbs/row.PNG" onclick="addCombo('./images/orbs/row.PNG')"/></td>
-                    <td><input class="combotype" id="combononrow" type="image" src="./images/orbs/nonrowtrans.png" onclick="addCombo('./images/orbs/nonrowtrans.png')"/></td>
-                    <td><input class="combotype" id="combol" type="image" src="./images/orbs/ltrans.png" onclick="addCombo('./images/orbs/ltrans.png')"/></td>
+                    <td><input class="combotype" id="combo3" type="image" src="./images/orbs/3.PNG" onclick="addCombo('threec')"/></td>
+                    <td><input class="combotype" id="combo4" type="image" src="./images/orbs/4.PNG" onclick="addCombo('fourc')"/></td>
+                    <td><input class="combotype" id="combo5" type="image" src="./images/orbs/5.PNG" onclick="addCombo('fivec')"/></td>
+                    <td><input class="combotype" id="comborow" type="image" src="./images/orbs/row.PNG" onclick="addCombo('row')"/></td>
+                    <td><input class="combotype" id="combononrow" type="image" src="./images/orbs/nonrowtrans.png" onclick="addCombo('nonrow')"/></td>
+                    <td><input class="combotype" id="combol" type="image" src="./images/orbs/ltrans.png" onclick="addCombo('l')"/></td>
                 </tr>
                 <tr>
                     <th>Cross</th>
                     <th>VDP</th>
                     <th>Heart L</th>
                     <th>Heart 3x3</th>
-                    <th colspan="2">Blob</th>
+                    <th colspan="2">Blob / 7+</th>
                 </tr>
                 <tr>
-                    <td><input class="combotype" id="combocross" type="image" src="./images/orbs/crosstrans.png" onclick="addCombo('./images/orbs/crosstrans.png')"/></td>
-                    <td><input class="combotype" id="combovdp" type="image" src="./images/orbs/vdp.PNG" onclick="addCombo('./images/orbs/vdp.PNG')"/></td>
-                    <td><input class="combotype" id="comboheartl" type="image" src="./images/orbs/heartltrans.png" onclick="addCombo('./images/orbs/heartltrans.png')"/></td>
-                    <td><input class="combotype" id="comboheartvdp" type="image" src="./images/orbs/heartvdp.PNG" onclick="addCombo('./images/orbs/heartvdp.png')"/></td>
-                    <td colspan="2" id="tdblob"><input class="combotype" id="comboblob" type="image" src="./images/orbs/blob.PNG" onclick="addCombo('./images/orbs/blob.png')"/><a>hi</a><br><a>hello</a></td>
+                    <td><input class="combotype" id="combocross" type="image" src="./images/orbs/crosstrans.png" onclick="addCombo('cross')"/></td>
+                    <td><input class="combotype" id="combovdp" type="image" src="./images/orbs/vdp.PNG" onclick="addCombo('vdp')"/></td>
+                    <td><input class="combotype" id="comboheartl" type="image" src="./images/orbs/heartltrans.png" onclick="addCombo('heartl')"/></td>
+                    <td><input class="combotype" id="comboheartvdp" type="image" src="./images/orbs/heartvdp.PNG" onclick="addCombo('heartvdp')"/></td>
+                    <td colspan="2" id="tdblob"><div class="blobby"><input class="combotype" id="comboblob" type="image" src="./images/orbs/blob.PNG" onclick="addCombo('blob')"/></div>
+                    <div class="blobby"><label for="bloborbnumber"># of orbs: </label><input type="number" id="bloborbnumber" step="1" size="1" min="7" value="7">
+                    <label for="blobrownumber"># of rows: </label><input type="number" id="blobrownumber" step="1" size="1" min="0" value="0"></div></td>
                 </tr>
             </table>
             </div>

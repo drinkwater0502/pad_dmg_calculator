@@ -150,6 +150,17 @@ h1, h2 {
     max-width:180px;
 }
 
+.blobby {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+    margin: 10px
+}
+
 #tdblob {
-    text-align: left;
+    text-align:unset;
+    display: flex;
+    min-width: 368px;;
+    min-height: 100px;
 }
